@@ -1,4 +1,4 @@
-from pages.login_page import LoginPage
+from .pages.login_page import LoginPage
 
 def test_guest_should_be_on_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/accounts/login/"
