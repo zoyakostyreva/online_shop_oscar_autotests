@@ -1,3 +1,8 @@
+from telnetlib import EC
+
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.wait import WebDriverWait
+
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
@@ -32,12 +37,13 @@ class ProductPage(BasePage):
         assert not self.is_element_present(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET), \
             "Success message is presented, but should not be"
 
-    # def is_disappeared(self, how, what, timeout=4):
-    #     try:
-    #         WebDriverWait(self.browser, timeout, 1, TimeoutException). \
-    #             until_not(EC.presence_of_element_located((how, what)))
-    #     except TimeoutException:
-    #         return False
-    #
-    #     return True
+    def success_message_is_disappeared_after_adding_to_basket(self, timeout=4):
+        try:
+            WebDriverWait(self.browser, timeout, 1, TimeoutException). \
+                until_not(EC.presence_of_element_located(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET))
+        except TimeoutException:
+            return False
+
+        return True
+
 

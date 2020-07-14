@@ -1,5 +1,8 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+import pytest
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
 
 
 class LoginPage(BasePage):
@@ -16,3 +19,6 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_FORM), "Registration form is not presented"
+
+
+
