@@ -17,3 +17,4 @@ def test_guest_should_see_register_form(browser):
     page = LoginPage(browser, link)   # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
     page.open()                      # открываем страницу
     page.should_be_register_form()
+
