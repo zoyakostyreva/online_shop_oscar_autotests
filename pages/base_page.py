@@ -50,3 +50,7 @@ class BasePage():
     def no_items_in_basket(self):
         pass
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
+
