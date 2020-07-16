@@ -1,11 +1,8 @@
 from telnetlib import EC
-
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
-
 from .base_page import BasePage
 from .locators import ProductPageLocators
-
 
 class ProductPage(BasePage):
     # def should_be_add_to_basket_button(self):
