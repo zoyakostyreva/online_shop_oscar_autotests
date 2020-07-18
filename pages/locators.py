@@ -5,6 +5,7 @@ class BasePageLocators():
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.CSS_SELECTOR, "a[href*='basket']")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    DROPDOWN_BOOKS_SUBMENU = (By.CSS_SELECTOR, "#browse .dropdown-submenu > [tabindex='-1']")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -14,6 +15,9 @@ class LoginPageLocators():
     PASSWORD2_FIELD = (By.ID, "id_registration-password2")
     SUBMIT_BUTTON = (By.NAME, "registration_submit")
     REGISTRATION_ALERT = (By.CSS_SELECTOR, "#messages div.alertinner")
+    EMAIL_VALIDATION_ATTRIBUTE = 'validationMessage'
+    PASSWORD_ERROR_ALERT = (By.CSS_SELECTOR, "#id_registration-password2 + span.error-block")
+    EMAIL_ERROR_ALERT = (By.CSS_SELECTOR, "#id_registration-email + span.error-block")
 
 class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
@@ -26,3 +30,6 @@ class BasketPageLocators():
     BASKET_IS_EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner p")
     BASKET_ITEM = (By.CSS_SELECTOR, ".basket-items")
 
+class BookStorePageLocators():
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-primary")
+    ALERT_PRODUCT_IN_BASKET = (By.CSS_SELECTOR, "#messages .alert:nth-child(1) .alertinner")

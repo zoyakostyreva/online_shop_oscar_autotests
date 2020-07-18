@@ -1,0 +1,27 @@
+1594754518950	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Yoga\\AppData\\Local\\Temp\\rust_mozprofileAGZE2J"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594754528390	Marionette	INFO	Listening on port 3489
+1594754528836	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/, line 614: ReferenceError: oscar is not defined
+1594754532616	Marionette	INFO	Stopped listening on port 3489
+1594754624041	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Yoga\\AppData\\Local\\Temp\\rust_mozprofileg7SgTS"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594754631251	Marionette	INFO	Listening on port 3631
+1594754631674	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/, line 614: ReferenceError: oscar is not defined
+1594754636800	Marionette	INFO	Stopped listening on port 3631
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1594754676183	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Yoga\\AppData\\Local\\Temp\\rust_mozprofilez3JKBj"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1594754682807	Marionette	INFO	Listening on port 3723
+1594754682839	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/, line 614: ReferenceError: oscar is not defined
+1594754685999	Marionette	INFO	Stopped listening on port 3723
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
