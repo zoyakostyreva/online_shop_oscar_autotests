@@ -1,14 +1,17 @@
 import time
 from os import getenv
 
+
 class UrlConstants():
     BASE_URL = getenv('BASE_URL', 'http://selenium1py.pythonanywhere.com')
     LOGIN_URL = f"{BASE_URL}/accounts/login/"
     CODERS_AT_WORK_PRODUCT_URL = f"{BASE_URL}/catalogue/coders-at-work_207"
     CITY_AND_STARTS_PRODUCT_URL = f"{BASE_URL}/catalogue/the-city-and-the-stars_95/"
 
+
 class TestsConstants():
     WINDOW_SIZE = ('1280', '720')
+
 
 class TestsUserDataConstants():
     TEST_EMAIL_INCORRECT = 'kostyreva'

@@ -2,13 +2,15 @@ import pytest
 from datetime import datetime
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
-from .pages.constants import TestsConstants
+from .constants import TestsConstants
+
 
 def pytest_addoption(parser):
     parser.addoption('--language', action='store', default='en',
                      help="Choose language")
     parser.addoption('--browser', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
+
 
 @pytest.fixture(scope="function")
 def browser(request):
@@ -33,6 +35,4 @@ def browser(request):
     # делаем скриншот с помощью команды Selenium'а и сохраняем его в папку с именем "screenshot-ГГГГ-ММ-ДД_ЧЧ-ММ-СС"
     browser.save_screenshot('screenshots/screenshot-%s.png' % now)
     browser.quit()
-
-
 

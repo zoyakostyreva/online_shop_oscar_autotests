@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
+
 class ProductPage(BasePage):
     def should_be_add_to_basket_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), \
@@ -15,30 +16,28 @@ class ProductPage(BasePage):
 
     def product_is_present_in_basket(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
-        alert_product_in_basket = self.find_element(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET)
-        assert product_name.text == alert_product_in_basket.text, "Product isn't in the basket"
+        alerts_product_in_basket = self.browser.find_elements(*ProductPageLocators.ALERTS_STRONG)
+        assert any(product_name.text == element.text for element in alerts_product_in_basket), \
+            "Product isn't in the basket"
 
     def alert_price_is_equal_to_product_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
-        alert_price_in_basket = self.find_element(*ProductPageLocators.ALERT_PRICE_IN_BASKET)
-        assert product_price.text in alert_price_in_basket.text, f"Price in basket {alert_price_in_basket.text} " \
-                                                                 f"isn't equal to product price {product_price.text}"
+        alerts_price_in_basket = self.browser.find_elements(*ProductPageLocators.ALERTS_STRONG)
+        assert any(product_price.text == element.text for element in alerts_price_in_basket), \
+            f"Price in basket isn't equal to product price {product_price.text}"
 
     def should_not_be_success_message_after_adding_to_basket(self):
-        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
-        alert_product_in_basket = self.find_element(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET)
-        assert (not self.is_element_present(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET) \
-                    or product_name.text != alert_product_in_basket.text), \
+        assert not self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented"
 
     def should_not_be_success_message(self):
-        assert not self.is_element_present(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET), \
+        assert not self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
 
     def success_message_is_disappeared_after_adding_to_basket(self, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException). \
-                until_not(EC.presence_of_element_located(*ProductPageLocators.ALERT_PRODUCT_IN_BASKET))
+                until_not(EC.presence_of_element_located(*ProductPageLocators.SUCCESS_MESSAGE))
         except TimeoutException:
             return False
 

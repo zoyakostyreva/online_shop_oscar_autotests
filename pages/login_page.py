@@ -1,6 +1,7 @@
 from .base_page import BasePage
-from .constants import TestsUserDataConstants
+from ..constants import TestsUserDataConstants
 from .locators import LoginPageLocators
+
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -45,8 +46,8 @@ class LoginPage(BasePage):
         button_submit.click()
 
         message = self.browser.find_element(*LoginPageLocators.EMAIL_FIELD)
-        assert message.get_attribute(LoginPageLocators.EMAIL_VALIDATION_ATTRIBUTE) != None, \
-                                                   "Проверка на символ @ не была осуществлена"
+        assert message.get_attribute(LoginPageLocators.EMAIL_VALIDATION_ATTRIBUTE) is not None, \
+            "Проверка на символ @ не была осуществлена"
 
     def should_be_correct_password_length(self):
         input_email = self.browser.find_element(*LoginPageLocators.EMAIL_FIELD)

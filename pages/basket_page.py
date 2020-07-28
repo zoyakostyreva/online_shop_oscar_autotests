@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import BasketPageLocators
 
+
 class BasketPage(BasePage):
     def should_be_basket_is_empty_message(self):
         message = self.browser.find_element(*BasketPageLocators.BASKET_IS_EMPTY_MESSAGE)
